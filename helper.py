@@ -26,12 +26,12 @@ def dumpjson(data, filepath):
         return None
 
 #Adding a new dictionary to json.
-def push(database, base):
+def push(filepath, data):
     try:
-        with open(database, encoding='utf-8') as json_file:
+        with open(filepath, encoding='utf-8') as json_file:
             data = json.load(json_file)
-        data.append(base)
-        with open(database, 'w', encoding='utf-8') as outfile:
+        data.append(data)
+        with open(filepath, 'w', encoding='utf-8') as outfile:
             json.dump(data, outfile, indent=4, ensure_ascii=False)
     except Exception:
         return None
@@ -44,9 +44,9 @@ def task(intenger):
         return None
 
 #Maximum id.
-def maxuId(database):
+def maxuId(filepath):
     try:
-        with open(database, encoding='utf-8') as json_file:
+        with open(filepath, encoding='utf-8') as json_file:
             data = json.load(json_file)
             max_item = max(data, key = lambda item: int(item['uid']))
             return int(max_item['uid'])+1
@@ -72,8 +72,8 @@ def replace(text):
         return 0
 
 #Find to user by id.
-def find(object, id, database):
+def find(object, id, filepath):
     try:
-        return list(filter(lambda x: x[object]==id, loadjson(database)))[0]
+        return list(filter(lambda x: x[object]==id, loadjson(filepath)))[0]
     except Exception:
         return None
