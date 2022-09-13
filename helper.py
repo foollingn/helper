@@ -42,8 +42,8 @@ def task(intenger):
         return re.sub(r'(?<!^)(?=(\d{3})+$)', r'.', f"{intenger}")
     except Exception:
         return None
-#Maximum id.
 
+#Maximum id.
 def maxuId(database):
     try:
         with open(database, encoding='utf-8') as json_file:
@@ -54,7 +54,6 @@ def maxuId(database):
         return 0
 
 #Random by chance.
-
 def chance(chance, x=bool):
     status = random.choices([True, False], weights=[chance,100-chance], k=1)[0]
     if x is True:
@@ -64,7 +63,6 @@ def chance(chance, x=bool):
     return {"status": status}
 
 #Replace string to intenger.
-
 def replace(text):
     try:
         text = text.replace('к', '000')
@@ -74,11 +72,8 @@ def replace(text):
         return 0
 
 #Find to user by id.
-
 def find(object, id, database):
     try:
         return list(filter(lambda x: x[object]==id, loadjson(database)))[0]
     except Exception:
         return None
-
-user = find(1, "users.json")
