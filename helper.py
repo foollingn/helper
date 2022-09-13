@@ -8,7 +8,7 @@ def loadjson(filepath):
         with open(filepath, 'r', encoding='utf-8') as jsonfile:
             return json.load(jsonfile)
     except Exception:
-        return Non
+        return None
 
 #Write to json file.
 def dumpjson(data, filepath):
