@@ -11,7 +11,7 @@ def loadjson(filepath):
     except Exception:
         return None
 
-#Write to json file.
+#Write to json file
 def dumpjson(data, filepath):
     try: 
         with open(filepath, 'r', encoding='utf-8') as jsonfile:
