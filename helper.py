@@ -4,7 +4,6 @@ import re
 
 #Json file upload.
 def loadjson(filepath):
-    print(1)
     try:
         with open(filepath, 'r', encoding='utf-8') as jsonfile:
             return json.load(jsonfile)
