@@ -2,7 +2,7 @@ import json
 import random
 import re 
 
-#Json file upload
+#Json file upload.
 def loadjson(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as jsonfile:
