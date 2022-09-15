@@ -38,18 +38,20 @@ def push(filepath, data):
 
 #Delete to json file.
 def delete(filepath, id):
-    with open(filepath, encoding='utf-8') as json_file:
-        data = json.load(json_file)
-        minimal = 0
-        for person in data:
-            if person["id"] == id:
-                data.pop(minimal)
-            else:
-                minimal = minimal + 1
-        with open(filepath, 'w', encoding='utf-8') as outfile:
-            json.dump(data, outfile, ensure_ascii=False, indent=4)
-            return True
-
+    try:
+        with open(filepath, encoding='utf-8') as json_file:
+            data = json.load(json_file)
+            minimal = 0
+            for person in data:
+                if person["id"] == id:
+                    data.pop(minimal)
+                else:
+                    minimal = minimal + 1
+            with open(filepath, 'w', encoding='utf-8') as outfile:
+                json.dump(data, outfile, ensure_ascii=False, indent=4)
+                return True
+    except Exception:
+        return None
 #Beautiful numbers.
 def task(intenger):
     try:
