@@ -19,7 +19,8 @@ class InfoMiddleware(BaseMiddleware[Message]):
                 "balance": 1000,
                 "message": 1
             })
-            await self.event.answer("куда мы лезим...")
+            await self.event.answer("куда мы лезим..."
+
 @bot.on.message(text=["проф", "профиль"])
 async def handler(ans: Message):
     user = find("id", ans.from_id, users)
