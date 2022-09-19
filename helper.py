@@ -1,4 +1,3 @@
-from cgitb import text
 from colorama import Fore, Back, Style
 import colorama
 import json
