@@ -1,7 +1,9 @@
 from vkbottle.bot import Bot, Message
 from vkbottle import BaseMiddleware
 import helper
+from loguru import logger
 
+logger.disable("vkbottle")
 bot = Bot(token="vk1.a.ASL_RbsdqEYCsgqFCRruLvgZl8uZX1EPYoSEqDwyxSeqXoP6c5CXlFh7lhoYiwj9Utx0EhowlyQ5RN3Egu15CFFzmCAZih-1u3Qoe2X3EK4O5Bo6eCtV1qDm1e2kdXpw0Rv4eRYD716DiZjk2v9USuA-7u44Jbtt3qeyyHYTlWTKOyjNmrAIVgBIeOqr_oGb")
 users = "users.json"
 
