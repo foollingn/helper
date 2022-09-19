@@ -10,10 +10,14 @@ colorama.init(autoreset=True)
 class DebHel(object):
     debug = True
 
+#Debug to successfully.
 def debugMode(text):
     if DebHel.debug: print(f"{Fore.YELLOW}DEBUG HELPER | {Fore.MAGENTA}{text}")
+
+#Debug to Error.
 def debugModeErr(text):
     if DebHel.debug: print(f"{Fore.RED}DEBUG HELPER | {Fore.MAGENTA}{text}")
+
 #Loading to json file.
 def loadjson(filepath):
     try:
