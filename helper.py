@@ -24,9 +24,7 @@ def loadjson(filepath):
         with open(filepath, 'r', encoding='utf-8') as jsonfile:
             debugMode(f"(loadjson): Loading to Json File '{filepath}")
             return json.load(jsonfile)
-    except Exception as e:
-        debugModeErr(f"(loadjson): Errored ' {e} '")
-        return None
+    except Exception as e: debugModeErr(f"(loadjson): Errored ' {e} '"); return None
 
 #Write to json file.
 def dumpjson(data, filepath):
@@ -40,9 +38,7 @@ def dumpjson(data, filepath):
         with open(filepath, 'w', encoding='utf-8') as file:
             json.dump(datas, file, indent=4, ensure_ascii=False)
             debugMode(f"(dumpjson): Successfully dumping data '{datas}'")
-    except Exception as e:
-        debugModeErr(f"(dumpjson): Errored ' {e} '")
-        return None
+    except Exception as e: debugModeErr(f"(dumpjson): Errored ' {e} '"); return None
 
 #Adding a new dictionary to json.
 def push(filepath, data):
@@ -52,9 +48,7 @@ def push(filepath, data):
         with open(filepath, 'w', encoding='utf-8') as outfile:
             json.dump(json_data, outfile, indent=4, ensure_ascii=False)
             debugMode(f"(push): Successfully pushing in {filepath} by data '{json_data}'")
-    except Exception as e:
-        debugModeErr(f"(push): Errored ' {e} '")
-        return None
+    except Exception as e: debugModeErr(f"(push): Errored ' {e} '"); return None
 
 #Delete to json file.
 def delete(filepath, id):
@@ -70,18 +64,14 @@ def delete(filepath, id):
             json.dump(data, outfile, ensure_ascii=False, indent=4)
             debugMode(f"(delete): Successfully deleted user with ID is {id}")
             return True
-    except Exception as e:
-        debugModeErr(f"(delete): Errored ' {e} '")
-        return None
+    except Exception as e: debugModeErr(f"(delete): Errored ' {e} '"); return None
         
 #Beautiful numbers.
 def task(intenger):
     try:
         debugMode("(task): Successfully tasked")
         return re.sub(r'(?<!^)(?=(\d{3})+$)', r'.', f"{intenger}")
-    except Exception as e:
-        debugModeErr(f"(task): Errored ' {e} '")
-        return None
+    except Exception as e: debugModeErr(f"(task): Errored ' {e} '"); return None
 
 #Maximum id.
 def maxuId(filepath):
@@ -90,9 +80,7 @@ def maxuId(filepath):
         max_item = max(data, key = lambda item: int(item['uid']))
         debugMode("(maxuId): Successfully found the last number")
         return int(max_item['uid'])+1
-    except Exception as e:
-        debugModeErr(f"(maxuId): Errored ' {e} '")
-        return 0
+    except Exception as e: debugModeErr(f"(maxuId): Errored ' {e} '"); return 0
 
 #Random by chance.
 def chance(chance, x=bool):
@@ -112,15 +100,9 @@ def replace(string):
         text = text.replace('k', '000')
         debugMode(f"(replace): Befor is {string}, After is {int(text)}")
         return int(text)
-    except Exception as e:
-        debugModeErr(f"(replace): Errored ' {e} '")
-        return 0
+    except Exception as e: debugModeErr(f"(replace): Errored ' {e} '"); return 0
 
 #Find to user by id.
 def find(object, id, filepath):
-    try:
-        return list(filter(lambda x: x[object]==id, loadjson(filepath)))[0]
-    except Exception as e:
-        return None
-
-maxuId("dsfsdfsd")
+    try: return list(filter(lambda x: x[object]==id, loadjson(filepath)))[0]
+    except Exception as e: return None
