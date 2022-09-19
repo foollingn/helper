@@ -29,10 +29,10 @@ def dumpjson(data, filepath):
 def push(filepath, data):
     try:
         with open(filepath, encoding='utf-8') as json_file:
-            data = json.load(json_file)
-        data.append(data)
+            json_data = json.load(json_file)
+        json_data.append(data)
         with open(filepath, 'w', encoding='utf-8') as outfile:
-            json.dump(data, outfile, indent=4, ensure_ascii=False)
+            json.dump(json_data, outfile, indent=4, ensure_ascii=False)
     except Exception:
         return None
 
