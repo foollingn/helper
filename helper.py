@@ -19,7 +19,7 @@ def debugModeErr(text):
     if DebHel.debug: print(f"{Fore.RED}DEBUG HELPER | {Fore.MAGENTA}{text}")
 
 #Loading to json file.
-def loadjson(filepath):
+def loadjson(filepath): 
     try:
         with open(filepath, 'r', encoding='utf-8') as jsonfile:
             debugMode(f"(loadjson): Loading to Json File '{filepath}")
