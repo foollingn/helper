@@ -1,5 +1,3 @@
-from colorama import Fore
-import colorama
 import json
 import random
 import re 
