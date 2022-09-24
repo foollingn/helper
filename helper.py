@@ -4,7 +4,6 @@ import json
 import random
 import re 
 
-
 colorama.init(autoreset=True)
 
 class DebHel(object):
